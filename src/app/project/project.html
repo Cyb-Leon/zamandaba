@@ -1,7 +1,7 @@
 <div class="container mx-auto px-4 py-10">
     <div class="mb-16 text-center">
         <h2 class="text-balance text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Featured Projects
+            Some Things I've Built
         </h2>
         <p class="mt-4 text-pretty text-lg text-muted-foreground">
             Explore my latest work and creative experiments
@@ -12,8 +12,9 @@
 
         <div class="group relative animate-fade-in-up">
             <!-- {/* Computer Monitor Frame */} -->
+            @for (project of choseProject; track project) {
             <div
-                class="relative rounded-xl bg-linear-to-b from-zinc-800 to-zinc-900 p-3 shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                class="font-mono border-4 border-black p-6 rounded-lg shadow-[6px_6px_0px_0px_black] hover:shadow-[12px_12px_0px_0px_black] transition-shadow duration-150 ease-in-out max-w-md mx-auto">
                 <!-- {/* Monitor Top Bar */} -->
                 <div class="mb-2 flex items-center gap-2 rounded-t-lg bg-zinc-950 px-3 py-2">
                     <div class="flex gap-1.5">
@@ -31,37 +32,12 @@
                 <!-- {/* Screen/Preview Area */} -->
                 <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-zinc-950">
                     <div class="absolute inset-0 bg-linear-to-br from-zinc-900/50 to-zinc-950/50"></div>
-                    <img src="" alt=""
-                        class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
-
-                    <!-- {/* Scan line effect */} -->
-                    <!-- <div 
-                  class={`absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent transition-opacity duration-300 ${
-                    hoveredId === project.id ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  style={{
-                    animation: hoveredId === project.id ? 'scan 2s linear infinite' : 'none',
-                  }}
-                /> -->
+                    <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer"><img
+                            [src]="project.previewUrl" [alt]="project.title"
+                            class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" /></a>
 
                     <!-- {/* Overlay on hover */} -->
-                    <!-- <div
-                  class={`absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
-                    hoveredId === project.id ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  <a
-                    href={project.projectUrl}
-                    class="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-transform hover:scale-105"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      console.log(`[v0] Navigating to ${project.title}`)
-                    }}
-                  >
-                    View Project
-                    <ExternalLink class="h-4 w-4" />
-                  </a>
-                </div> -->
+
                 </div>
 
                 <!-- {/* Monitor Stand */} -->
@@ -71,22 +47,35 @@
             </div>
 
             <!-- {/* Project Info Below Computer */} -->
-            <div class="mt-6 space-y-3">
-                <h3 class="text-balance text-xl font-semibold">Kock Pty App</h3>
+            <div class="mt-6 space-y-3.5 ml-3">
+                <h3 class="text-balance text-xl font-semibold">{{project.title}}</h3>
 
                 <!-- {/* Tech Stack Pills */} -->
                 <div class="flex flex-wrap gap-2">
-                    <span class="rounded-full bg-cyan-700 px-3 py-1 text-xs font-medium text-white">
-                        Java
-                    </span>
+
+                    @for (tech of project.techStack; track tech) {
+                    @for (icon of langicon; track langicon) {
+                    @if (tech === icon.title) {
+                    <span class="rounded-full  pill-point px-3 py-1 text-xs font-medium">
+                        <img [src]="icon.icoImagUrl" [alt]="icon.title" height="24" width="24" srcset=""></span>
+                    }
+                    }
+
+
+
+
+                    }
+
                 </div>
 
                 <!-- {/* Project Link */} -->
-                <a href=""
-                    class="inline-flex items-center gap-1 text-sm font-medium text-foreground/60 transition-colors hover:text-foreground">
+                <button (click)="onSelectDetails()"
+                    class="inline-flex items-center gap-1 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground">
                     View Details
-                </a>
+                </button>
             </div>
+            }
+
         </div>
     </div>
 </div>

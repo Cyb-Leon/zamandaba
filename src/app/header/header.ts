@@ -9,4 +9,8 @@ import { LogoComponent } from "../logo-component/logo-component";
 })
 export class Header {
 
+  onHackathon(){
+    document.querySelector("h2")?.setHTMLUnsafe('what does this do?');
+    
+  }
 }
