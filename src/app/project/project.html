@@ -1,81 +1,57 @@
-<div class="container mx-auto px-4 py-10">
-    <div class="mb-16 text-center">
-        <h2 class="text-balance text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Some Things I've Built
-        </h2>
-        <p class="mt-4 text-pretty text-lg text-muted-foreground">
-            Explore my latest work and creative experiments
-        </p>
-    </div>
 
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-        <div class="group relative animate-fade-in-up">
-            <!-- {/* Computer Monitor Frame */} -->
-            @for (project of choseProject; track project) {
-            <div
-                class="font-mono border-4 border-black p-6 rounded-lg shadow-[6px_6px_0px_0px_black] hover:shadow-[12px_12px_0px_0px_black] transition-shadow duration-150 ease-in-out max-w-md mx-auto">
-                <!-- {/* Monitor Top Bar */} -->
-                <div class="mb-2 flex items-center gap-2 rounded-t-lg bg-zinc-950 px-3 py-2">
-                    <div class="flex gap-1.5">
-                        <div class="h-2.5 w-2.5 rounded-full bg-red-500/80"></div>
-                        <div class="h-2.5 w-2.5 rounded-full bg-yellow-500/80"></div>
-                        <div class="h-2.5 w-2.5 rounded-full bg-green-500/80"></div>
-                    </div>
-                    <div class="ml-auto flex items-center gap-1">
-                        <div class="h-1 w-1 rounded-full bg-zinc-600"></div>
-                        <div class="h-1 w-1 rounded-full bg-zinc-600"></div>
-                        <div class="h-1 w-1 rounded-full bg-zinc-600"></div>
-                    </div>
+    <div class="group relative my-12 animate-fade-in-up">
+        <!-- {/* Computer Monitor Frame */} -->
+        <div
+            class="font-mono border-4 border-black p-6 rounded-lg shadow-[6px_6px_0px_0px_black] hover:shadow-[12px_12px_0px_0px_black] transition-shadow duration-150 ease-in-out max-w-md mx-auto">
+            <!-- {/* Monitor Top Bar */} -->
+            <div class="mb-2 flex items-center gap-2 rounded-t-lg bg-zinc-950 px-3 py-2">
+                <div class="flex gap-1.5">
+                    <div class="h-2.5 w-2.5 rounded-full bg-red-500/80"></div>
+                    <div class="h-2.5 w-2.5 rounded-full bg-yellow-500/80"></div>
+                    <div class="h-2.5 w-2.5 rounded-full bg-green-500/80"></div>
                 </div>
-
-                <!-- {/* Screen/Preview Area */} -->
-                <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-zinc-950">
-                    <div class="absolute inset-0 bg-linear-to-br from-zinc-900/50 to-zinc-950/50"></div>
-                    <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer"><img
-                            [src]="project.previewUrl" [alt]="project.title"
-                            class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" /></a>
-
-                    <!-- {/* Overlay on hover */} -->
-
-                </div>
-
-                <!-- {/* Monitor Stand */} -->
-                <div class="mt-3 flex justify-center">
-                    <div class="h-3 w-16 rounded-b-lg bg-zinc-800"></div>
+                <div class="ml-auto flex items-center gap-1">
+                    <div class="h-1 w-1 rounded-full bg-zinc-600"></div>
+                    <div class="h-1 w-1 rounded-full bg-zinc-600"></div>
+                    <div class="h-1 w-1 rounded-full bg-zinc-600"></div>
                 </div>
             </div>
 
-            <!-- {/* Project Info Below Computer */} -->
-            <div class="mt-6 space-y-3.5 ml-3">
-                <h3 class="text-balance text-xl font-semibold">{{project.title}}</h3>
+            <!-- {/* Screen/Preview Area */} -->
+            <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-zinc-950">
+                <div class="absolute inset-0 bg-linear-to-br from-zinc-900/50 to-zinc-950/50"></div>
+                <a [href]="projectUrl" target="_blank" rel="noopener noreferrer"><img [src]="previewUrl"
+                        [alt]="projectTitle"
+                        class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" /></a>
 
-                <!-- {/* Tech Stack Pills */} -->
-                <div class="flex flex-wrap gap-2">
+                <!-- {/* Overlay on hover */} -->
 
-                    @for (tech of project.techStack; track tech) {
-                    @for (icon of langicon; track langicon) {
-                    @if (tech === icon.title) {
-                    <span class="rounded-full  pill-point px-3 py-1 text-xs font-medium">
-                        <img [src]="icon.icoImagUrl" [alt]="icon.title" height="24" width="24" srcset=""></span>
-                    }
-                    }
-
-
-
-
-                    }
-
-                </div>
-
-                <!-- {/* Project Link */} -->
-                <button (click)="onSelectDetails()"
-                    class="inline-flex items-center gap-1 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground">
-                    View Details
-                </button>
             </div>
-            }
+
+            <!-- {/* Monitor Stand */} -->
+            <div class="mt-3 flex justify-center">
+                <div class="h-3 w-16 rounded-b-lg bg-zinc-800"></div>
+            </div>
+        <!-- {/* Project Info Below Computer */} -->
+        <div class="mt-6 space-y-3.5 ml-3">
+            <h3 class="text-balance text-xl font-semibold">{{projectTitle}}</h3>
+
+            <!-- {/* Tech Stack Pills */} -->
+            <div class="flex flex-wrap gap-2">
+                <span class="rounded-full  pill-point px-3 py-1 text-xs font-medium">
+                    <img [src]="icoImagUrl" [alt]="iconTitle" height="24" width="24" srcset=""></span>
+            </div>
+
+            <!-- {/* Project Link */} -->
+            <button (click)="onSelectDetails()"
+                class="inline-flex items-center gap-1 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground">
+                View Details
+            </button>
+        </div>
 
         </div>
+
+
+
     </div>
-</div>

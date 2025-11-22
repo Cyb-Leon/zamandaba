@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { projects } from '../projects';
+import { Component, Input, input } from '@angular/core';
 import { langicons } from '../langicons';
 
 
@@ -13,9 +12,12 @@ import { langicons } from '../langicons';
 
 
 export class Project {
-  choseProject = projects;
-
-  langicon = langicons;
+  @Input() projectUrl!: string;
+  @Input() previewUrl!: string;
+  @Input() projectTitle!: string;
+  @Input() icoImagUrl!: string;
+  @Input() iconTitle!: string;
+  // accept external input
 
   onSelectDetails() {
     // const randomIndex = Math.floor(Math.random() * 3)
