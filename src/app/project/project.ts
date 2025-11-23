@@ -1,6 +1,5 @@
 import { Component, computed, input } from '@angular/core';
 import { IProject, langicons } from '../projects';
-import { LangiconsComponent } from "../langicons-component/langicons-component";
 
 @Component({
   selector: 'app-project',

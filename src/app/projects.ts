@@ -18,55 +18,81 @@ export const DUMMY_PROJECTS: IProject[] = [
     id: 1,
     projectTitle: 'AI Chat Application',
     previewUrl: '/brave_screenshot_korneryard.vercel.app.png',
-    techStack: ['React', 'Node.js', 'OpenAI', 'Socket.io'],
+    techStack: ['Angular', 'Java',  'Postgress', 'Tailwind CSS'],
     projectUrl: 'https://korneryard.vercel.app/',
   },
   {
     id: 2,
     projectTitle: "I'm workin' on it boss",
     previewUrl: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZ4aHU0bmxwcXpwd3l0NWdjZm42MHN6djhhcXB0bjl3aG83dm5zeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCRJDo24UvJMA/giphy.gif',
-    techStack: ['Vue.js', 'Supabase', 'Tailwind CSS'],
+    techStack: ['Python', 'AWS', 'Linux', 'Grafana'],
     projectUrl: '#',
   },
 ]
 
 interface LangIcons {
-    id: number,
-    title: string,
-    icoImagUrl: string
+  id: number,
+  title: string,
+  icoImagUrl: string
 }
 
 export const langicons: LangIcons[] = [
 
-    {
-        id: 1,
-        title: "Next.js",
-        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
-    },
-    {
-        id: 2,
-        title: "TypeScript",
-        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-    },
-    {
-        id: 3,
-        title: "Spring Boot",
-        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
-    },
-    {
-        id: 4,
-        title: "Postgress",
-        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg"
-    },
-    {
-        id: 5,
-        title: "Tailwind CSS",
-        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-    },
-    {
-        id: 6,
-        title: "Node.js",
-        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg"
-    }
+  {
+    id: 1,
+    title: "Next.js",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+  },
+  {
+    id: 2,
+    title: "TypeScript",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+  },
+  {
+    id: 3,
+    title: "Spring Boot",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+  },
+  {
+    id: 4,
+    title: "Postgress",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg"
+  },
+  {
+    id: 5,
+    title: "Tailwind CSS",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+  },
 
+  {
+    id: 6,
+    title: "Angular",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+  },
+  {
+    id: 7,
+    title: "Linux",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg"
+  }
+  ,
+  {
+    id: 8,
+    title: "AWS",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+  },
+  {
+    id: 9,
+    title: "Python",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+  },
+  {
+    id: 10,
+    title: "Grafana",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg"
+  },
+  {
+    id: 11,
+    title: "Java",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+  }
 ]
