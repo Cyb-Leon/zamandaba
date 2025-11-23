@@ -10,15 +10,10 @@
             </p>
         </div>
         <div class="lg:flex justify-center lg:gap-32 ">
+            @for (project of projects; track project.id) {
+            <app-project [myproject]="projects[project.id]"></app-project>
+            }
 
-            <app-project [projectTitle]="projects[0].title" [previewUrl]="projects[0].previewUrl"
-                [projectUrl]="projects[0].projectUrl" [icoImagUrl]="langicons[0].icoImagUrl"
-                [iconTitle]="projects[0].techStack[0]"></app-project>
-            <app-project [projectTitle]="projects[1].title" [previewUrl]="projects[1].previewUrl"
-                [projectUrl]="projects[1].projectUrl" [icoImagUrl]="langicons[0].icoImagUrl"
-                [iconTitle]="projects[0].techStack[0]"></app-project>
-            <app-project [projectTitle]="projects[2].title" [previewUrl]="projects[2].previewUrl"
-                [projectUrl]="projects[2].projectUrl"></app-project>
         </div>
 
     </div>

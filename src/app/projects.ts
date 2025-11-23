@@ -1,31 +1,72 @@
-interface Project {
+export interface IProject {
   id: number
-  title: string
+  projectTitle: string
   previewUrl: string
   techStack: string[]
   projectUrl: string
 }
 
-export const DUMMY_PROJECTS: Project[] = [
+export const DUMMY_PROJECTS: IProject[] = [
   {
-    id: 1,
-    title: 'TshepangYouth - NGO [service system]',
+    id: 0,
+    projectTitle: 'TshepangYouth - NGO [service system]',
     previewUrl: '/tshepangYouth.png',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'Postgress'],
     projectUrl: 'https://youthenrichment-app-wnyu-cyb-leons-projects.vercel.app/',
   },
   {
-    id: 2,
-    title: 'AI Chat Application',
+    id: 1,
+    projectTitle: 'AI Chat Application',
     previewUrl: '/brave_screenshot_korneryard.vercel.app.png',
     techStack: ['React', 'Node.js', 'OpenAI', 'Socket.io'],
     projectUrl: 'https://korneryard.vercel.app/',
   },
   {
-    id: 3,
-    title: "I'm workin' on it boss",
+    id: 2,
+    projectTitle: "I'm workin' on it boss",
     previewUrl: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZ4aHU0bmxwcXpwd3l0NWdjZm42MHN6djhhcXB0bjl3aG83dm5zeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCRJDo24UvJMA/giphy.gif',
     techStack: ['Vue.js', 'Supabase', 'Tailwind CSS'],
     projectUrl: '#',
   },
+]
+
+interface LangIcons {
+    id: number,
+    title: string,
+    icoImagUrl: string
+}
+
+export const langicons: LangIcons[] = [
+
+    {
+        id: 1,
+        title: "Next.js",
+        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+    },
+    {
+        id: 2,
+        title: "TypeScript",
+        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+    },
+    {
+        id: 3,
+        title: "Spring Boot",
+        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+    },
+    {
+        id: 4,
+        title: "Postgress",
+        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg"
+    },
+    {
+        id: 5,
+        title: "Tailwind CSS",
+        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+    },
+    {
+        id: 6,
+        title: "Node.js",
+        icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg"
+    }
+
 ]

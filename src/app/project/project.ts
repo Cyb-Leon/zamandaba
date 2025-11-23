@@ -1,7 +1,6 @@
-import { Component, Input, input } from '@angular/core';
-import { langicons } from '../langicons';
-
-
+import { Component, computed, input } from '@angular/core';
+import { IProject, langicons } from '../projects';
+import { LangiconsComponent } from "../langicons-component/langicons-component";
 
 @Component({
   selector: 'app-project',
@@ -12,13 +11,25 @@ import { langicons } from '../langicons';
 
 
 export class Project {
-  @Input() projectUrl!: string;
-  @Input() previewUrl!: string;
-  @Input() projectTitle!: string;
-  @Input() icoImagUrl!: string;
-  @Input() iconTitle!: string;
-  // accept external input
+  //take project imports
+  readonly myproject = input.required<IProject>();
 
+  //iterate tech stack
+  theTech = computed(() =>{
+     const temp: string [] = [];
+    this.myproject().techStack.forEach(tech => {
+        langicons.forEach(icon =>{
+          if (tech === icon.title) {
+            temp.push(icon.icoImagUrl)
+          }
+        })
+    });
+    return temp;
+  })
+
+  imageUrl = computed(() => {
+    return this.myproject().previewUrl;
+  });
   onSelectDetails() {
     // const randomIndex = Math.floor(Math.random() * 3)
     // this.choseProject = projects[randomIndex];
