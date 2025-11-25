@@ -10,6 +10,9 @@ import { IProject, langicons } from '../projects';
 
 
 export class Project {
+onMobile(pageUrl: string) {
+  document.querySelector('#projectUrl')?.setAttribute('href', pageUrl);
+}
   //take project imports
   readonly myproject = input.required<IProject>();
 
