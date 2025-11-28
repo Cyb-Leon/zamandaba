@@ -1,13 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./header/header";
-import { Project } from "./project/project";
+import { ProjectComponent } from "./project-component/project-component";
 import { DUMMY_PROJECTS } from './projects';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Project],
+  imports: [RouterOutlet, Header, ProjectComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

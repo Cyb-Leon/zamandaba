@@ -4,18 +4,17 @@ import { IProject, langicons } from '../projects';
 @Component({
   selector: 'app-project',
   imports: [],
-  templateUrl: './project.html',
-  styleUrl: './project.css',
+  templateUrl: './project-component.html',
+  styleUrl: './project-component.css',
 })
 
 
-export class Project {
+export class ProjectComponent {
 onMobile(pageUrl: string) {
   document.querySelector('#projectUrl')?.setAttribute('href', pageUrl);
 }
   //take project imports
   readonly myproject = input.required<IProject>();
-
   //iterate tech stack
   theTech = computed(() =>{
      const temp: string [] = [];
