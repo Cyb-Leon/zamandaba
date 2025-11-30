@@ -1,5 +1,5 @@
 export interface IHackathondb {
-  id: number,
+  id: number
   title: string
   tagline: string
   event: string
@@ -8,6 +8,7 @@ export interface IHackathondb {
   story: string[]
   techStack: string[]
   images: {
+    id: number
     url: string
     caption: string
   }[]

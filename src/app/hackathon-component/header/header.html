@@ -50,7 +50,7 @@
           class="mobile-nav-item"
           class="'mobile-nav-active': {{$index === hackEvent.currentIndex}}">
           <div class="mobile-nav-thumb">
-            <img [src]="eventThumbnail.images[0].url" [alt]="eventThumbnail.title">
+            <img [src]="eventThumbnail.images[$index].url" [alt]="eventThumbnail.title">
           </div>
           <p class="mobile-nav-text">{{eventThumbnail.title.split(' ').slice(0, 2).join(' ')}}</p>
         </button>
