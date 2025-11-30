@@ -23,7 +23,7 @@
             <button 
               (click)="hackEvent.selectHackathon($index)"
               class="nav-dot"
-              class="'nav-dot-active': {{$index === hackEvent.currentIndex}}">
+              class="'nav-dot-active': {{item.id === hackEvent.currentIndex}}">
             </button>
 
             }
