@@ -7,15 +7,30 @@ import { HackathonService } from '../../services/hackathon-service';
   templateUrl: './journey.html',
   styleUrl: '../hackathon-component.css',
 })
+
 export class Journey {
+  
   //get service &
   //ensuring data persistance
-  constructor(private hackathonService : HackathonService){
+  constructor(private hackathonService: HackathonService) {
     this.hackathonService = hackathonService;
   }
 
   //get the service
-  get hackEvent(){
-      return this.hackathonService;
+  get hackEvent() {
+    return this.hackathonService;
   }
+
+  //get journey images
+  get justImages() {
+    const temp : IJourneyImg [] = [];
+    this.hackathonService.images.forEach(imageJ => {
+
+          temp.push(imageJ);
+    })
+    return temp;
+
+  };
+
+
 }
