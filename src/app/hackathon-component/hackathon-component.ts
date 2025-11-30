@@ -1,59 +1,23 @@
-import { Component, Input, input } from '@angular/core';
-import { Hackathon } from './hackathon-data';
+
+import { Component} from '@angular/core';
+import { Header } from "./header/header";
+import { Hero } from "./hero/hero";
+import { Title } from "./title/title";
+import { TechStack } from "./tech-stack/tech-stack";
+import { Story } from "./story/story";
+import { Journey } from "./journey/journey";
+import { Achievements } from "./achievements/achievements";
+import { LinksCard } from "./links-card/links-card";
+import { BottomNav } from "./bottom-nav/bottom-nav";
+
 
 @Component({
   selector: 'app-hackathon-component',
-  imports: [],
+  imports: [Header, Hero, Title, TechStack, Story, Journey, Achievements, LinksCard, BottomNav],
   templateUrl: './hackathon-component.html',
   styleUrl: './hackathon-component.css',
 })
 export class HackathonComponent {
-  //vm gets one hackathon project - gives you access to the hackathon table in data server
-  readonly vm = input.required<Hackathon>();
-
-
-  //** 
-  // which hackathon [project are we on] 
-  //    */
-
-  currentIndex = 0;
-  currentHackathon = this.buyisaVMdata();
-
-  //asidale ngoVM, idata lakhe sesinalo
-  /*
-  * first asiqalaze ukuthi uVM unani
-  */
-
-  async buyisaVMdata() {
-    return this.vm();
-  }
-
-  // Methods
-  nextHackathon = () => {
-    if (this.currentIndex < this.hackathons.length - 1) {
-      this.currentIndex++
-      this.currentHackathon = this.hackathons[this.currentIndex]
-      scrollToTop()
-    }
-  }
-
-  prevHackathon = () => {
-    if (this.currentIndex > 0) {
-      this.currentIndex--
-      this.currentHackathon = this.hackathons[this.currentIndex]
-      scrollToTop()
-    }
-  }
-
-  selectHackathon = (index) => {
-    this.currentIndex = index
-    this.currentHackathon = this.hackathons[index]
-    scrollToTop()
-  }
-
-  scrollToTop() {
-    $window.scrollTo(0, 0)
-  }
 
 
 
