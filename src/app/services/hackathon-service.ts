@@ -30,17 +30,17 @@ export class HackathonService {
         },
         {
           id:1,
-          url: "/ABhack4.jpeg",
+          url: "/ABhack4.JPEG",
           caption: "Presenting our demo to the judges",
         },
         {
           id:2,
-          url: "/ABhack5me.jpeg",
+          url: "/ABhack2.jpeg",
           caption: "Celebrating after winning Best Technical Innovation",
         },
         {
           id:3,
-          url: "/ABhack3.jpeg",
+          url: "/ABhack3.JPEG",
           caption: "The final product: AI-powered personalized quizzes",
         },
       ],
@@ -56,7 +56,7 @@ export class HackathonService {
     {
       id: 1,
       title: "ITWeb Security Summit Hackathon",
-      tagline: "Automating application security testing reports and root-cause.",
+      tagline: "As businesses are confronted with an increasingly complex cyber threat landscape, staying ahead of developments in cyber security has become more critical than ever.",
       event: "ITWebSS 2025",
       date: "June 2025",
       location: "Sandton, Gauteng",
@@ -70,22 +70,22 @@ export class HackathonService {
       images: [
         {
           id:0,
-          url: "/ITwebhack2.jpeg",
+          url: "/ITwebhack2.JPEG",
           caption: "EcoTrack mobile interface showing daily challenges",
         },
         {
           id:1,
-          url: "/ITwebhack2.jpeg",
-          caption: "Brainstorming session on sustainability gamification",
+          url: "/ITWebhack.JPEG",
+          caption: "Forth placement for defense among offensive teams",
         },
         {
           id:2,
-          url: "/ITwebhack2.jpeg",
-          caption: "The TreeHacks venue—beautiful Stanford campus",
+          url: "/ITwebhack3.JPEG",
+          caption: "The SSHACK25 venue—beautiful Mandela Square",
         },
         {
           id:3,
-          url: "/ITwebhack2.jpeg",
+          url: "/ITwebhack4.JPEG",
           caption: "Community leaderboard driving friendly competition",
         },
       ],

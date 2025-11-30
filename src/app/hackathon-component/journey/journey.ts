@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { HackathonService } from '../../services/hackathon-service';
 
 @Component({
@@ -22,15 +22,15 @@ export class Journey {
   }
 
   //get journey images
-  get justImages() {
-    const temp : IJourneyImg [] = [];
-    this.hackathonService.images.forEach(imageJ => {
+  // justImages = computed(() => {
+  //   const temp : IJourneyImg [] = [];
+  //   this.hackathonService.images.forEach(imageJ => {
 
-          temp.push(imageJ);
-    })
-    return temp;
+  //         temp.push(imageJ);
+  //   })
+  //   return temp;
 
-  };
+  // });
 
 
 }

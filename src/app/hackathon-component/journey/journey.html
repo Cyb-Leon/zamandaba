@@ -4,14 +4,14 @@
     <h2 class="journey-title">The Journey</h2>
   </div>
   <div class="journey-images">
-    @for (aJourney of justImages; track $index) {
+    @for (image of hackEvent.currentHackathon.images.slice(1); track $index) {
     <div class="journey-card">
       <div class="journey-image-wrapper">
-        <img [src]="aJourney.url" [alt]="aJourney.caption" class="journey-image">
+        <img [src]="image.url" [alt]="image.caption" class="journey-image">
       </div>
-      @if (aJourney.caption) {
+      @if (image.caption) {
       <div class="journey-caption">
-        <p>{{aJourney.caption}}</p>
+        <p>{{image.caption}}</p>
       </div>
       }
 
