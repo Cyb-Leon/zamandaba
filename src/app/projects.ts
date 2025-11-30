@@ -9,14 +9,14 @@ export interface IProject {
 export const DUMMY_PROJECTS: IProject[] = [
   {
     id: 0,
-    projectTitle: 'TshepangYouth - NGO [service system]',
+    projectTitle: 'Templeting Startkit in Next.js',
     previewUrl: '/tshepangYouth.png',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'Postgress'],
     projectUrl: 'https://youthenrichment-app-wnyu-cyb-leons-projects.vercel.app/',
   },
   {
     id: 1,
-    projectTitle: 'AI Chat Application',
+    projectTitle: 'Angular Startkit - pre-configured Java API ',
     previewUrl: '/brave_screenshot_korneryard.vercel.app.png',
     techStack: ['Angular', 'Java',  'Postgress', 'Tailwind CSS'],
     projectUrl: 'https://korneryard.vercel.app/',
@@ -26,7 +26,7 @@ export const DUMMY_PROJECTS: IProject[] = [
     projectTitle: "I'm workin' on it boss",
     previewUrl: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZ4aHU0bmxwcXpwd3l0NWdjZm42MHN6djhhcXB0bjl3aG83dm5zeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCRJDo24UvJMA/giphy.gif',
     techStack: ['Python', 'AWS', 'Linux', 'Grafana'],
-    projectUrl: '#',
+    projectUrl: '',
   },
 ]
 

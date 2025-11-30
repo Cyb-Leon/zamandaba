@@ -41,7 +41,7 @@ export class HackathonService {
         {
           id:3,
           url: "/ABhack3.JPEG",
-          caption: "The final product: AI-powered personalized quizzes",
+          caption: "The first day, The team & Idea",
         },
       ],
       achievements: [
