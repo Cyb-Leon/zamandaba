@@ -44,15 +44,15 @@
     <!-- Mobile Thumbnail Navigation -->
     <div class="mobile-nav">
       <div class="mobile-nav-scroll">
-        @for (storyImg of hackEvent.images; track $index) {
+        @for (eventThumbnail of hackEvent.numHackathons; track $index) {
         <button  
           (click)="hackEvent.selectHackathon($index)"
           class="mobile-nav-item"
           class="'mobile-nav-active': {{$index === hackEvent.currentIndex}}">
           <div class="mobile-nav-thumb">
-            <img [src]="storyImg.url" [alt]="hackEvent.currentHackathon.title">
+            <img [src]="eventThumbnail.images[0].url" [alt]="eventThumbnail.title">
           </div>
-          <p class="mobile-nav-text">{{hackEvent.currentHackathon.title.split(' ').slice(0, 2).join(' ')}}</p>
+          <p class="mobile-nav-text">{{eventThumbnail.title.split(' ').slice(0, 2).join(' ')}}</p>
         </button>
         }
 

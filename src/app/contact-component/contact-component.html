@@ -3,8 +3,8 @@
     <div class="header">
       <div class="icon-wrapper">
         <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
           </path>
         </svg>
       </div>
@@ -15,24 +15,14 @@
     <form (ngSubmit)="onSubmit()" class="form">
       <div class="form-group">
         <label for="name">Name</label>
-        <input 
-          id="name" 
-          type="text" 
-          formControlName="name"
-          placeholder="Your name"
-          [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
-        />
+        <input id="name" type="text" formControlName="name" placeholder="Your name"
+          [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" />
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input 
-          id="email" 
-          type="email" 
-          formControlName="email"
-          placeholder="your@email.com"
-          [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
-        />
+        <input id="email" type="email" formControlName="email" placeholder="your@email.com"
+          [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" />
       </div>
 
       <div class="form-group">
@@ -47,24 +37,18 @@
 
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea 
-          id="message" 
-          formControlName="message"
-          rows="5"
-          placeholder="Share what's on your heart..."
-          [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
-        ></textarea>
+        <textarea id="message" formControlName="message" rows="5" placeholder="Share what's on your heart..."
+          [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
       </div>
 
-      <button 
-        type="submit" 
-        [disabled]="isSubmitting || isSubmitted"
-        [class.submitting]="isSubmitting"
-        [class.submitted]="isSubmitted"
-      >
-        <span *ngIf="!isSubmitting && !isSubmitted">Send Message</span>
-        <span *ngIf="isSubmitting">Sending...</span>
-        <span *ngIf="isSubmitted">Message Sent ✓</span>
+      <button type="submit" [disabled]="isSubmitting || isSubmitted" [class.submitting]="isSubmitting"
+        [class.submitted]="isSubmitted">
+        @if (!isSubmitting && !isSubmitted) { <span>Send Message</span>}
+        @if (isSubmitting) { <span>Sending...</span>}
+        @if (isSubmitted) { <span>Message Sent ✓</span>}
+
+
+
       </button>
     </form>
   </div>
