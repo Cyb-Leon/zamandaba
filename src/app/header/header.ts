@@ -9,13 +9,21 @@ import { ILangIcons, langicons } from '../projects';
   styleUrl: './header.css',
 })
 export class Header {
+  //my easter egg for interests
+  onLogo() {
+    const theEgg = document.getElementById('easter-egg');
+    theEgg?.classList.add('text-center')
 
 
+    const theNEgg = document.getElementById('greater-thing');
+    theNEgg?.classList.add('justify-center')
+  }
+  //
   theTech = computed(() => {
     const temp: ILangIcons[] = [];
     for (let index = 12; index < langicons.length; index++) {
       const element = langicons[index];
-                temp.push(element)
+      temp.push(element)
     }
     return temp;
   })
