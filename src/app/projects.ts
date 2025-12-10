@@ -18,7 +18,7 @@ export const DUMMY_PROJECTS: IProject[] = [
     id: 1,
     projectTitle: 'Angular Startkit - Java Springboot API ',
     previewUrl: '/touchafrica.netlify.app.png',
-    techStack: ['Angular', 'Java',  'Postgress','Netlify', 'Tailwind CSS'],
+    techStack: ['Angular', 'Java', 'Postgress', 'Netlify', 'Tailwind CSS'],
     projectUrl: 'https://touchafrica.netlify.app/',
   },
   {
@@ -30,13 +30,13 @@ export const DUMMY_PROJECTS: IProject[] = [
   },
 ]
 
-interface LangIcons {
+export interface ILangIcons {
   id: number,
   title: string,
   icoImagUrl: string
 }
 
-export const langicons: LangIcons[] = [
+export const langicons: ILangIcons[] = [
 
   {
     id: 1,
@@ -95,9 +95,23 @@ export const langicons: LangIcons[] = [
     title: "Java",
     icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
   },
-    {
+  {
     id: 12,
     title: "Netlify",
     icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg"
+  },
+  {
+    id: 13,
+    title: "https://github.com/Cyb-Leon/",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubcodespaces/githubcodespaces-original.svg"
+  }, {
+    id: 14,
+    title: "https://x.com/zev219",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg"
+  }, {
+    id: 15,
+    title: "https://za.linkedin.com/in/zamokuhle-ndaba-845452186",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
   }
+
 ]

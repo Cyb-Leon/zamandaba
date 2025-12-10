@@ -2,18 +2,30 @@
 
     <nav class="container fixed top-0 left-0 right-0  mx-auto px-6 h-20 flex items-center justify-between">
 
-        <button (click)="onHackathon()" class="text-lg font-medium cinzel-links hover:text-gray-600 transition-colors">Hackathons</button>
+        <button (click)="onHackathon()"
+            class="text-lg font-medium cinzel-links hover:text-gray-600 transition-colors">Hackathons</button>
         <app-logo-component></app-logo-component>
         <button class="text-lg font-medium cinzel-links hover:text-gray-600 transition-colors">Projects</button>
 
     </nav>
-        <div class="p-4 mt-24">
-            <h2 class="">ZAMA NDABA</h2>
-            <p>An IT Specialist who happens to build systems too.</p>
-            <ul class="flex ">
-                <li class="px-4">Linux</li>
-                <li class="px-4">Security</li>
-                <li class="px-4">GenAI</li>
-            </ul>
+    <div class="p-4 mt-24">
+        <h2 class="">ZAMA NDABA</h2>
+        <p>An IT Specialist who happens to build systems too.</p>
+        <ul class="flex ">
+            <li class="px-4">Linux</li>
+            <li class="px-4">Security</li>
+            <li class="px-4">GenAI</li>
+        </ul>
+    </div>
+    <div class="flex flex-wrap justify-center gap-2">
+        <div class="flex flex-wrap gap-2">
+            @for (techstackimg of theTech(); track $index) {
+            <span class="rounded-full  pill-point px-3 py-1 text-xs font-medium">
+                <a [href]="techstackimg.title" target="_blank" rel="noopener noreferrer"><img [src]="techstackimg.icoImagUrl"
+                        [alt]="techstackimg" height="24" width="24" srcset=""></a>
+            </span>
+            }
+
         </div>
+    </div>
 </header>
