@@ -16,10 +16,10 @@ export const DUMMY_PROJECTS: IProject[] = [
   },
   {
     id: 1,
-    projectTitle: 'Angular Startkit - pre-configured Java API ',
-    previewUrl: '/brave_screenshot_korneryard.vercel.app.png',
-    techStack: ['Angular', 'Java',  'Postgress', 'Tailwind CSS'],
-    projectUrl: 'https://korneryard.vercel.app/',
+    projectTitle: 'Angular Startkit - Java Springboot API ',
+    previewUrl: '/touchafrica.netlify.app.png',
+    techStack: ['Angular', 'Java',  'Postgress','Netlify', 'Tailwind CSS'],
+    projectUrl: 'https://touchafrica.netlify.app/',
   },
   {
     id: 2,
@@ -94,5 +94,10 @@ export const langicons: LangIcons[] = [
     id: 11,
     title: "Java",
     icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+  },
+    {
+    id: 12,
+    title: "Netlify",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg"
   }
 ]
