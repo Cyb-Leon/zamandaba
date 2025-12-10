@@ -5,9 +5,9 @@
         <button (click)="onHackathon()"
             class="text-lg font-medium cinzel-links hover:text-gray-600 transition-colors">Hackathons</button>
 
-         <button (click)="onLogo()">
-        <app-logo-component></app-logo-component>
-         </button>
+        <button (click)="onLogo()">
+            <app-logo-component></app-logo-component>
+        </button>
         <button class="text-lg font-medium cinzel-links hover:text-gray-600 transition-colors">Projects</button>
 
     </nav>
@@ -24,8 +24,8 @@
         <div class="flex flex-wrap gap-2">
             @for (techstackimg of theTech(); track $index) {
             <span class="rounded-full  pill-point px-3 py-1 text-xs font-medium">
-                <a [href]="techstackimg.title" target="_blank" rel="noopener noreferrer"><img [src]="techstackimg.icoImagUrl"
-                        [alt]="techstackimg" height="24" width="24" srcset=""></a>
+                <a [href]="techstackimg.title" target="_blank" rel="noopener noreferrer"><img
+                        [src]="techstackimg.icoImagUrl" [alt]="techstackimg" height="24" width="24" srcset=""></a>
             </span>
             }
 
