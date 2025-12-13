@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { IProject, langicons } from '../projects';
 
 @Component({
@@ -10,9 +10,11 @@ import { IProject, langicons } from '../projects';
 
 
 export class ProjectComponent {
-onMobile(pageUrl: string) {
-  document.querySelector('#projectUrl')?.setAttribute('href', pageUrl);
-}
+  showToast = signal(false);
+
+  onMobile(pageUrl: string) {
+    document.querySelector('#projectUrl')?.setAttribute('href', pageUrl);
+  }
   //take project imports
   readonly myproject = input.required<IProject>();
   //iterate tech stack
@@ -31,8 +33,16 @@ onMobile(pageUrl: string) {
   imageUrl = computed(() => {
     return this.myproject().previewUrl;
   });
+
   onSelectDetails() {
-    // const randomIndex = Math.floor(Math.random() * 3)
-    // this.choseProject = projects[randomIndex];
+    this.showToast.set(true);
+    const projectUrl = this.myproject().projectUrl;
+    
+    setTimeout(() => {
+      this.showToast.set(false);
+      if (projectUrl) {
+        window.open(projectUrl, '_blank');
+      }
+    }, 2000);
   }
 }

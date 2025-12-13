@@ -9,17 +9,17 @@ export interface IProject {
 export const DUMMY_PROJECTS: IProject[] = [
   {
     id: 0,
-    projectTitle: 'Templeting Startkit in Next.js',
-    previewUrl: '/tshepangYouth.png',
+    projectTitle: 'GrayCloud Pty - Web Analytics',
+    previewUrl: '/graycloud-sample.gif',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'Postgress'],
-    projectUrl: 'https://youthenrichment-app-wnyu-cyb-leons-projects.vercel.app/',
+    projectUrl: 'https://zamandaba.co.za/',
   },
   {
     id: 1,
     projectTitle: 'Angular Startkit - Java Springboot API ',
-    previewUrl: '/touchafrica.netlify.app.png',
+    previewUrl: '/Pantsulaservices.gif',
     techStack: ['Angular', 'Java', 'Postgress', 'Netlify', 'Tailwind CSS'],
-    projectUrl: 'https://touchafrica.netlify.app/',
+    projectUrl: 'https://pantsula.zamandaba.co.za/',
   },
   {
     id: 2,

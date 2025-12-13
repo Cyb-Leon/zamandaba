@@ -29,14 +29,10 @@ export class Header {
 
   onHackathon() {
     // this.router.navigate(['/hackat']);
-    const theEgg = document.getElementById('easter-egg');
-    theEgg?.classList.add('hidden')
     this.router.navigate(['/hackathon']);
 
   }
   onProjects() {
-    const theEgg = document.getElementById('easter-eggs');
-    theEgg?.classList.add('hidden')
     this.router.navigate(['']);
    }
 }
