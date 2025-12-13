@@ -1,4 +1,5 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { LogoComponent } from "../logo-component/logo-component";
 import { ILangIcons, langicons } from '../projects';
 
@@ -9,14 +10,12 @@ import { ILangIcons, langicons } from '../projects';
   styleUrl: './header.css',
 })
 export class Header {
+
+  private router = inject(Router);
+
   //my easter egg for interests
   onLogo() {
-    const theEgg = document.getElementById('easter-egg');
-    theEgg?.classList.add('text-center')
-
-
-    const theNEgg = document.getElementById('greater-thing');
-    theNEgg?.classList.add('justify-center')
+    this.router.navigate(['']);
   }
   //
   theTech = computed(() => {
@@ -29,7 +28,15 @@ export class Header {
   })
 
   onHackathon() {
-
+    // this.router.navigate(['/hackat']);
+    const theEgg = document.getElementById('easter-egg');
+    theEgg?.classList.add('hidden')
+    this.router.navigate(['/hackathon']);
 
   }
+  onProjects() {
+    const theEgg = document.getElementById('easter-eggs');
+    theEgg?.classList.add('hidden')
+    this.router.navigate(['']);
+   }
 }

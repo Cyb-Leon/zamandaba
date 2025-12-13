@@ -7,7 +7,7 @@ import { HackathonService } from '../../services/hackathon-service';
   templateUrl: './header.html',
   styleUrl: '../hackathon-component.css',
 })
-export class Header {
+export class HeaderHackathon {
   //get service &
   //ensuring data persistance
   constructor(private hackathonService : HackathonService){
