@@ -12,7 +12,7 @@ export const DUMMY_PROJECTS: IProject[] = [
     projectTitle: 'GrayCloud Pty - Web Analytics',
     previewUrl: '/graycloud-sample.gif',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'Postgress'],
-    projectUrl: 'https://zamandaba.co.za/',
+    projectUrl: 'http://graycloud.co.za/',
   },
   {
     id: 1,
