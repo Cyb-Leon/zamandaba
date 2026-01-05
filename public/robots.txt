@@ -1,0 +1,45 @@
+# Robots.txt for www.zamandaba.co.za
+# Zamokuhle Ndaba - Software Developer Portfolio
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.zamandaba.co.za/sitemap.xml
+
+# Crawl-delay (optional, be nice to your server)
+Crawl-delay: 1
+
+# Block common bot paths that don't exist
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow important resources
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+
+# Yandex specific  
+User-agent: Yandex
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /

@@ -1,0 +1,12 @@
+<div class="tech-stack-card">
+  <div class="tech-stack-header">
+    <div class="tech-stack-icon">@</div>
+    <h3 class="tech-stack-title">Tech Stack</h3>
+  </div>
+  <div class="tech-stack-pills">
+    @for (tech of hackEvent.currentHackathon.techStack; track $index) { <span class="tech-pill">
+      {{tech}}
+    </span>}
+
+  </div>
+</div>

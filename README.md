@@ -1,6 +1,7 @@
 # Zamandaba
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+trust me - this is the hard part.
+I will update it soon
 
 ## Development server
 

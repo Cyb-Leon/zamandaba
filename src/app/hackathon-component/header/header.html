@@ -1,0 +1,61 @@
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <div class="nav-header">
+        <div class="nav-left">
+          <h2 class="nav-title">Stories</h2>
+          <span class="nav-badge">
+            {{hackEvent.currentIndex + 1 }} / {{hackEvent.numHackathons.length}}
+          </span>
+        </div>
+
+        <div class="nav-controls">
+          <button 
+            class="nav-btn"
+            (click)="hackEvent.prevHackathon()"
+            [disabled]="hackEvent.currentIndex === 0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+
+          <div class="nav-dots">
+            @for (item of hackEvent.numHackathons; track $index) {
+            <button 
+              (click)="hackEvent.selectHackathon($index)"
+              class="nav-dot"
+              class="'nav-dot-active': {{item.id === hackEvent.currentIndex}}">
+            </button>
+
+            }
+          </div>
+
+          <button 
+            class="nav-btn"
+            (click)="hackEvent.nextHackathon()"
+            [disabled]="hackEvent.currentIndex === hackEvent.numHackathons.length - 1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Thumbnail Navigation -->
+    <div class="mobile-nav">
+      <div class="mobile-nav-scroll">
+        @for (eventThumbnail of hackEvent.numHackathons; track $index) {
+        <button  
+          (click)="hackEvent.selectHackathon($index)"
+          class="mobile-nav-item"
+          class="'mobile-nav-active': {{$index === hackEvent.currentIndex}}">
+          <div class="mobile-nav-thumb">
+            <img [src]="eventThumbnail.images[0].url" [alt]="eventThumbnail.title">
+          </div>
+          <p class="mobile-nav-text">{{eventThumbnail.title.split(' ').slice(0, 2).join(' ')}}</p>
+        </button>
+        }
+
+      </div>
+    </div>
+  </nav>

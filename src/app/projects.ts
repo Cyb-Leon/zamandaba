@@ -9,34 +9,34 @@ export interface IProject {
 export const DUMMY_PROJECTS: IProject[] = [
   {
     id: 0,
-    projectTitle: 'TshepangYouth - NGO [service system]',
-    previewUrl: '/tshepangYouth.png',
+    projectTitle: 'GrayCloud Pty - Web Analytics',
+    previewUrl: '/graycloud-sample.gif',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'Postgress'],
-    projectUrl: 'https://youthenrichment-app-wnyu-cyb-leons-projects.vercel.app/',
+    projectUrl: 'http://graycloud.co.za/',
   },
   {
     id: 1,
-    projectTitle: 'AI Chat Application',
-    previewUrl: '/brave_screenshot_korneryard.vercel.app.png',
-    techStack: ['Angular', 'Java',  'Postgress', 'Tailwind CSS'],
-    projectUrl: 'https://korneryard.vercel.app/',
+    projectTitle: 'Angular Startkit - Java Springboot API ',
+    previewUrl: '/Pantsulaservices.gif',
+    techStack: ['Angular', 'Java', 'Postgress', 'Netlify', 'Tailwind CSS'],
+    projectUrl: 'https://pantsula.zamandaba.co.za/',
   },
   {
     id: 2,
     projectTitle: "I'm workin' on it boss",
     previewUrl: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZ4aHU0bmxwcXpwd3l0NWdjZm42MHN6djhhcXB0bjl3aG83dm5zeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCRJDo24UvJMA/giphy.gif',
     techStack: ['Python', 'AWS', 'Linux', 'Grafana'],
-    projectUrl: '#',
+    projectUrl: '',
   },
 ]
 
-interface LangIcons {
+export interface ILangIcons {
   id: number,
   title: string,
   icoImagUrl: string
 }
 
-export const langicons: LangIcons[] = [
+export const langicons: ILangIcons[] = [
 
   {
     id: 1,
@@ -94,5 +94,24 @@ export const langicons: LangIcons[] = [
     id: 11,
     title: "Java",
     icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+  },
+  {
+    id: 12,
+    title: "Netlify",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg"
+  },
+  {
+    id: 13,
+    title: "https://github.com/Cyb-Leon/",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubcodespaces/githubcodespaces-original.svg"
+  }, {
+    id: 14,
+    title: "https://x.com/zev219",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg"
+  }, {
+    id: 15,
+    title: "https://za.linkedin.com/in/zamokuhle-ndaba-845452186",
+    icoImagUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
   }
+
 ]

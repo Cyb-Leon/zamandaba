@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './logo-component.css',
 })
 export class LogoComponent {
-
+  //my easter egg for interests
+  // onLogo(){
+  //   const theEgg = document.getElementById('easter-egg');
+  //   theEgg?.classList.add('to-the-center')
+  // }
 }
