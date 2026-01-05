@@ -1,5 +1,4 @@
-
-import { Component} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { HeaderHackathon } from "./header/header";
 import { Hero } from "./hero/hero";
 import { Title } from "./title/title";
@@ -9,8 +8,8 @@ import { Journey } from "./journey/journey";
 import { Achievements } from "./achievements/achievements";
 import { LinksCard } from "./links-card/links-card";
 import { BottomNav } from "./bottom-nav/bottom-nav";
-import {Header} from "../header/header"
-
+import { Header } from "../header/header";
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-hackathon-component',
@@ -18,8 +17,10 @@ import {Header} from "../header/header"
   templateUrl: './hackathon-component.html',
   styleUrl: './hackathon-component.css',
 })
-export class HackathonComponent {
+export class HackathonComponent implements OnInit {
+  private seoService = inject(SeoService);
 
-
-
+  ngOnInit(): void {
+    this.seoService.setHackathonSeo();
+  }
 }
