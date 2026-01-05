@@ -18,7 +18,7 @@
 
         <!-- {/* Screen/Preview Area */} -->
         <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-zinc-950">
-            <div class="absolute inset-0 bg-linear-to-br from-zinc-900/50 to-zinc-950/50 not-xl:relative" ></div>
+            <div class="absolute inset-0 bg-linear-to-br from-zinc-900/50 to-zinc-950/50 not-xl:relative"></div>
 
             <a [href]="myproject().projectUrl" target="_blank" rel="noopener noreferrer"><img [src]="imageUrl()"
                     [alt]="myproject().projectTitle"
@@ -39,30 +39,90 @@
             <!-- {/* Tech Stack Pills */} -->
             <div class="flex flex-wrap gap-2">
                 @for (techstackimg of theTech(); track $index) {
-                <span class="rounded-full  pill-point px-3 py-1 text-xs font-medium">
-                    
-                    <img [src]="techstackimg" [alt]="techstackimg" height="24" width="24" srcset=""></span>
+                <span class="rounded-full pill-point px-3 py-1 text-xs font-medium">
+                    <img [src]="techstackimg" [alt]="techstackimg" height="24" width="24" srcset="">
+                </span>
                 }
-
             </div>
-            
+
             <!-- {/* Project Link */} -->
             <button (click)="onSelectDetails()"
                 class="inline-flex items-center gap-1 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground">
                 View Details
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
             </button>
         </div>
 
     </div>
+</div>
 
-    <!-- Toast Popup -->
-    @if (showToast()) {
-    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-fade-in">
-        <div class="bg-zinc-900 border-2 border-zinc-700 rounded-xl px-8 py-6 shadow-2xl text-center max-w-sm mx-4">
-            <p class="text-white text-lg font-medium">View Details coming in the next release!</p>
-            <p class="text-zinc-400 text-sm mt-2">Redirecting to project...</p>
+<!-- Modal Overlay -->
+@if (showModal()) {
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container animate-fade-in" (click)="$event.stopPropagation()">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <div class="modal-header-left">
+                <div class="flex gap-1.5">
+                    <button (click)="closeModal()" class="modal-btn-close" title="Close">
+                        <div class="h-3 w-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"></div>
+                    </button>
+                    <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                    <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                </div>
+                <span class="modal-title">{{ myproject().projectTitle }}</span>
+            </div>
+            <button (click)="closeModal()" class="modal-close-x" title="Close (Esc)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Modal Body with iframe -->
+        <div class="modal-body">
+            @if (safeProjectUrl()) {
+            <iframe [src]="safeProjectUrl()" class="modal-iframe" frameborder="0"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms" loading="lazy">
+            </iframe>
+            } @else {
+            <div class="modal-no-preview">
+                <img [src]="imageUrl()" [alt]="myproject().projectTitle" class="modal-preview-image" />
+                <p class="mt-4 text-zinc-400">Live preview not available for this project</p>
+            </div>
+            }
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+            <div class="modal-tech-stack">
+                <span class="text-xs text-zinc-400 mr-2">Built with:</span>
+                @for (tech of myproject().techStack; track $index) {
+                <span class="modal-tech-pill">{{ tech }}</span>
+                }
+            </div>
+            <div class="modal-actions">
+                @if (myproject().projectUrl) {
+                <a [href]="myproject().projectUrl" target="_blank" rel="noopener noreferrer" class="modal-btn-visit">
+                    Visit Site
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
+                }
+                <button (click)="closeModal()" class="modal-btn-close-text">Close</button>
+            </div>
         </div>
     </div>
-    }
-
 </div>
+}
