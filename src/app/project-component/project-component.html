@@ -86,18 +86,47 @@
             </button>
         </div>
 
-        <!-- Modal Body with iframe -->
+        <!-- Modal Body with preview -->
         <div class="modal-body">
-            @if (safeProjectUrl()) {
-            <iframe [src]="safeProjectUrl()" class="modal-iframe" frameborder="0"
-                sandbox="allow-scripts allow-same-origin allow-popups allow-forms" loading="lazy">
-            </iframe>
-            } @else {
-            <div class="modal-no-preview">
-                <img [src]="imageUrl()" [alt]="myproject().projectTitle" class="modal-preview-image" />
-                <p class="mt-4 text-zinc-400">Live preview not available for this project</p>
+            <div class="modal-preview-container">
+                <!-- Project Preview Image/GIF -->
+                <div class="modal-preview-wrapper">
+                    <img [src]="imageUrl()" [alt]="myproject().projectTitle" class="modal-preview-image" />
+                    @if (myproject().projectUrl) {
+                    <div class="modal-preview-overlay">
+                        <a [href]="myproject().projectUrl" target="_blank" rel="noopener noreferrer" 
+                           class="modal-preview-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                                 stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            Open Live Site
+                        </a>
+                    </div>
+                    }
+                </div>
+                
+                <!-- Project Description/Details -->
+                <div class="modal-project-details">
+                    <h3 class="modal-project-title">{{ myproject().projectTitle }}</h3>
+                    <div class="modal-tech-list">
+                        @for (tech of myproject().techStack; track $index) {
+                        <span class="modal-tech-badge">{{ tech }}</span>
+                        }
+                    </div>
+                    @if (myproject().projectUrl) {
+                    <a [href]="myproject().projectUrl" target="_blank" rel="noopener noreferrer" 
+                       class="modal-url-link">
+                        {{ myproject().projectUrl }}
+                    </a>
+                    } @else {
+                    <p class="modal-status-text">🚧 Project in development</p>
+                    }
+                </div>
             </div>
-            }
         </div>
 
         <!-- Modal Footer -->

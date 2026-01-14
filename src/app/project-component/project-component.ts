@@ -1,5 +1,4 @@
-import { Component, computed, input, signal, HostListener, inject } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Component, computed, input, signal, HostListener } from '@angular/core';
 import { IProject, langicons } from '../projects';
 
 @Component({
@@ -9,8 +8,6 @@ import { IProject, langicons } from '../projects';
   styleUrl: './project-component.css',
 })
 export class ProjectComponent {
-  private sanitizer = inject(DomSanitizer);
-  
   showToast = signal(false);
   showModal = signal(false);
 
@@ -36,15 +33,6 @@ export class ProjectComponent {
 
   imageUrl = computed(() => {
     return this.myproject().previewUrl;
-  });
-
-  // Sanitized URL for iframe
-  safeProjectUrl = computed((): SafeResourceUrl | null => {
-    const url = this.myproject().projectUrl;
-    if (url) {
-      return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    }
-    return null;
   });
 
   onSelectDetails() {
