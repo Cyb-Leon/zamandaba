@@ -57,4 +57,7 @@ export class Header implements OnInit {
   onProjects() {
     this.router.navigate(['']);
   }
+  onProjects() {
+    this.router.navigate(['']);
+   }
 }
